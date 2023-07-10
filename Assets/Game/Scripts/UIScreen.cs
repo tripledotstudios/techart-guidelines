@@ -8,13 +8,14 @@ using UnityEngine;
 public class UIScreen : MonoBehaviour
 {
     protected static readonly int AnimatorParameterIsVisible = Animator.StringToHash("IsVisible");
-    protected static readonly int AnimatorStateOpen = Animator.StringToHash("Open");
-    protected static readonly int AnimatorStateClose = Animator.StringToHash("Close");
+    protected static readonly int AnimatorStateInvisible = Animator.StringToHash("Invisible");
+    protected static readonly int AnimatorStateShow = Animator.StringToHash("Show");
+    protected static readonly int AnimatorStateVisible = Animator.StringToHash("Visible");
+    protected static readonly int AnimatorStateHide = Animator.StringToHash("Hide");
 
-    public event Action OnOpened;
-    public event Action OnClosed;
+    public event Action<bool> OnVisibilityChanged;
     
-    public bool IsOpen { get; private set; }
+    public bool IsVisible { get; private set; }
     
     private Animator animator;
     private AnimatorStateNotifier animatorStateNotifier;
@@ -37,22 +38,22 @@ public class UIScreen : MonoBehaviour
 
     public void Open()
     {
-        if (IsOpen) {
+        if (IsVisible) {
             return;
         }
 
-        IsOpen = true;
-        animator.SetBool(AnimatorParameterIsVisible, IsOpen);
+        IsVisible = true;
+        animator.SetBool(AnimatorParameterIsVisible, IsVisible);
     }
 
     public void Close()
     {
-        if (!IsOpen) {
+        if (!IsVisible) {
             return;
         }
 
-        IsOpen = false;
-        animator.SetBool(AnimatorParameterIsVisible, IsOpen);
+        IsVisible = false;
+        animator.SetBool(AnimatorParameterIsVisible, IsVisible);
     }
 
     private void OnStateEntered(int stateHash)
@@ -62,14 +63,14 @@ public class UIScreen : MonoBehaviour
     
     private void OnStateExited(int stateHash)
     {
-        if (stateHash == AnimatorStateOpen) {
-            Debug.Log("Opened");
-            OnOpened?.Invoke();
+        if (stateHash == AnimatorStateShow) {
+            Debug.Log("Visible");
+            OnVisibilityChanged?.Invoke(true);
         }
 
-        if (stateHash == AnimatorStateClose) {
-            Debug.Log("Closed");
-            OnClosed?.Invoke();
+        if (stateHash == AnimatorStateHide) {
+            Debug.Log("Hidden");
+            OnVisibilityChanged?.Invoke(false);
         }
     }
 }

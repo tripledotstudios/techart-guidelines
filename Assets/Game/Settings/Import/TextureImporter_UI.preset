@@ -162,7 +162,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_SpriteMeshType
-    value: 1
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_Alignment
@@ -552,4 +552,54 @@ Preset:
     propertyPath: m_AssetBundleVariant
     value: 
     objectReference: {fileID: 0}
-  m_ExcludedProperties: []
+  m_ExcludedProperties:
+  - m_ExternalObjects
+  - m_MipMapMode
+  - m_LinearTexture
+  - m_FadeOut
+  - m_BorderMipMap
+  - m_MipMapsPreserveCoverage
+  - m_AlphaTestReferenceValue
+  - m_MipMapFadeDistanceStart
+  - m_MipMapFadeDistanceEnd
+  - m_ConvertToNormalMap
+  - m_ExternalNormalMap
+  - m_HeightScale
+  - m_NormalMapFilter
+  - m_IsReadable
+  - m_StreamingMipmaps
+  - m_StreamingMipmapsPriority
+  - m_VTOnly
+  - m_IgnoreMasterTextureLimit
+  - m_GrayScaleToAlpha
+  - m_GenerateCubemap
+  - m_CubemapConvolution
+  - m_SeamlessCubemap
+  - m_TextureFormat
+  - m_MaxTextureSize
+  - m_TextureSettings
+  - m_NPOTScale
+  - m_Lightmap
+  - m_CompressionQuality
+  - m_SpriteExtrude
+  - m_Alignment
+  - m_SpritePivot
+  - m_SpriteBorder
+  - m_SpriteTessellationDetail
+  - m_SingleChannelComponent
+  - m_FlipbookRows
+  - m_FlipbookColumns
+  - m_MaxTextureSizeSet
+  - m_CompressionQualitySet
+  - m_TextureFormatSet
+  - m_IgnorePngGamma
+  - m_ApplyGammaDecoding
+  - m_CookieLightType
+  - m_PlatformSettings
+  - m_SpriteSheet
+  - m_SpritePackingTag
+  - m_PSDRemoveMatte
+  - m_PSDShowRemoveMatteOption
+  - m_UserData
+  - m_AssetBundleName
+  - m_AssetBundleVariant

@@ -24,30 +24,25 @@ public class ScreenManager : MonoBehaviour
         
         screenStack.Add(activeScreen);
 
-        activeScreen.OnOpened += OnScreenOpened;
-        activeScreen.OnClosed += OnScreenClosed;
-        
+        activeScreen.OnVisibilityChanged += OnScreenVisibilityChanged;
+
         activeScreen.Open();
     }
 
-    private void OnScreenOpened()
+    private void OnScreenVisibilityChanged(bool isVisible)
     {
+        if (!isVisible) {
+            activeScreen.OnVisibilityChanged -= OnScreenVisibilityChanged;
+
+            screenStack.Remove(activeScreen);
+            Destroy(activeScreen.gameObject);
+            
+            if (screenStack.Count == 0) {
+                activeScreen = null;
+                return;
+            }
         
-    }
-
-    private void OnScreenClosed()
-    {
-        activeScreen.OnOpened -= OnScreenOpened;
-        activeScreen.OnClosed -= OnScreenClosed;
-
-        screenStack.Remove(activeScreen);
-        Destroy(activeScreen.gameObject);
-
-        if (screenStack.Count == 0) {
-            activeScreen = null;
-            return;
+            activeScreen = screenStack.Last();
         }
-        
-        activeScreen = screenStack.Last();
     }
 }
