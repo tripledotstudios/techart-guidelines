@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4625362941034742103}
   - component: {fileID: 8934654955106209907}
   m_Layer: 5
-  m_Name: BottomBarButton (2)
+  m_Name: Toggle_Settings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,7 +87,19 @@ MonoBehaviour:
   m_Group: {fileID: 2931785493239089356}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3285509717728983577}
+        m_TargetAssemblyTypeName: BottomBar, Assembly-CSharp
+        m_MethodName: OnSettingsToggleChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!111 &4625362941034742103
 Animation:
@@ -120,10 +132,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 212f8ede20ef84406971c42bdba1cdd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeStateAnimation: {fileID: 7400000, guid: 2a35adcccfb024e6a94b69f5a4a0097d, type: 2}
-  normalStateAnimation: {fileID: 7400000, guid: c68e4d5c923e941f3b3200fa9aa08a23, type: 2}
-  disabledAnimation: {fileID: 7400000, guid: 539beeaa5dbc949b39bc871a8a5f646c, type: 2}
-  enabledAnimation: {fileID: 7400000, guid: 2eb7f85080aab4844b5421e9e3439eac, type: 2}
+  activeStateAnimation: {fileID: 7400000, guid: 389e2fb3cb9c54e2a952070dbd49f25b, type: 2}
+  normalStateAnimation: {fileID: 7400000, guid: 00d2b04aaf1634f88bbe96748baa2197, type: 2}
+  disabledAnimation: {fileID: 7400000, guid: 43d3b96152ee341d7a1a4443ede4eacb, type: 2}
+  enabledAnimation: {fileID: 7400000, guid: 1df885e8bebba4a5eaed9b5eba4f513e, type: 2}
 --- !u!1 &1273604153283336794
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,7 +599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fafe2cfe61f6974895a912c3755e8f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AllowSwitchOff: 0
+  m_AllowSwitchOff: 1
 --- !u!1 &3908692096982600460
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,6 +726,7 @@ GameObject:
   - component: {fileID: 3908692097824044268}
   - component: {fileID: 7811028047257226352}
   - component: {fileID: 297834248883751526}
+  - component: {fileID: 3285509717728983577}
   m_Layer: 5
   m_Name: BottomBar
   m_TagString: Untagged
@@ -780,6 +793,24 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &3285509717728983577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3908692097824044269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47188b49019e2414dac439b47081360f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  homeToggle: {fileID: 83515792313759608}
+  settingsToggle: {fileID: 659891405242245332}
+  hamburgerToggle: {fileID: 4172935465677715469}
+  homeScreenPrefab: {fileID: 5752736852937129215, guid: f1fb5a619cb4d482b880bdd745669d83, type: 3}
+  settingsScreenPrefab: {fileID: 5752736852937129215, guid: 16fe96cf02aa94ae4834a847cb376cb8, type: 3}
+  hamburgerScreenPrefab: {fileID: 5752736852937129215, guid: 9c38121a78ba4489f95933841fcb5158, type: 3}
 --- !u!1 &4653619662017129422
 GameObject:
   m_ObjectHideFlags: 0
@@ -793,7 +824,7 @@ GameObject:
   - component: {fileID: 8600171043870829524}
   - component: {fileID: 6731135937882705608}
   m_Layer: 5
-  m_Name: BottomBarButton
+  m_Name: Toggle_Hamburger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -867,7 +898,19 @@ MonoBehaviour:
   m_Group: {fileID: 2931785493239089356}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3285509717728983577}
+        m_TargetAssemblyTypeName: BottomBar, Assembly-CSharp
+        m_MethodName: OnHamburgerToggleChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!111 &8600171043870829524
 Animation:
@@ -900,10 +943,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 212f8ede20ef84406971c42bdba1cdd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeStateAnimation: {fileID: 7400000, guid: 2a35adcccfb024e6a94b69f5a4a0097d, type: 2}
-  normalStateAnimation: {fileID: 7400000, guid: c68e4d5c923e941f3b3200fa9aa08a23, type: 2}
-  disabledAnimation: {fileID: 7400000, guid: 539beeaa5dbc949b39bc871a8a5f646c, type: 2}
-  enabledAnimation: {fileID: 7400000, guid: 2eb7f85080aab4844b5421e9e3439eac, type: 2}
+  activeStateAnimation: {fileID: 7400000, guid: 389e2fb3cb9c54e2a952070dbd49f25b, type: 2}
+  normalStateAnimation: {fileID: 7400000, guid: 00d2b04aaf1634f88bbe96748baa2197, type: 2}
+  disabledAnimation: {fileID: 7400000, guid: 43d3b96152ee341d7a1a4443ede4eacb, type: 2}
+  enabledAnimation: {fileID: 7400000, guid: 1df885e8bebba4a5eaed9b5eba4f513e, type: 2}
 --- !u!1 &4721672346225767909
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,7 +1340,7 @@ GameObject:
   - component: {fileID: 8080795989838290904}
   - component: {fileID: 5256583158067075097}
   m_Layer: 5
-  m_Name: BottomBarButton (1)
+  m_Name: Toggle_Home
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1371,8 +1414,20 @@ MonoBehaviour:
   m_Group: {fileID: 2931785493239089356}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
-  m_IsOn: 1
+      m_Calls:
+      - m_Target: {fileID: 3285509717728983577}
+        m_TargetAssemblyTypeName: BottomBar, Assembly-CSharp
+        m_MethodName: OnHomeToggleChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_IsOn: 0
 --- !u!111 &8080795989838290904
 Animation:
   m_ObjectHideFlags: 0
@@ -1404,10 +1459,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 212f8ede20ef84406971c42bdba1cdd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeStateAnimation: {fileID: 7400000, guid: 2a35adcccfb024e6a94b69f5a4a0097d, type: 2}
-  normalStateAnimation: {fileID: 7400000, guid: c68e4d5c923e941f3b3200fa9aa08a23, type: 2}
-  disabledAnimation: {fileID: 7400000, guid: 539beeaa5dbc949b39bc871a8a5f646c, type: 2}
-  enabledAnimation: {fileID: 7400000, guid: 2eb7f85080aab4844b5421e9e3439eac, type: 2}
+  activeStateAnimation: {fileID: 7400000, guid: 389e2fb3cb9c54e2a952070dbd49f25b, type: 2}
+  normalStateAnimation: {fileID: 7400000, guid: 00d2b04aaf1634f88bbe96748baa2197, type: 2}
+  disabledAnimation: {fileID: 7400000, guid: 43d3b96152ee341d7a1a4443ede4eacb, type: 2}
+  enabledAnimation: {fileID: 7400000, guid: 1df885e8bebba4a5eaed9b5eba4f513e, type: 2}
 --- !u!1 &8950716823687134858
 GameObject:
   m_ObjectHideFlags: 0

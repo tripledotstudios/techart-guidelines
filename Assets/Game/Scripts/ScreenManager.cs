@@ -2,13 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class ScreenManager : MonoBehaviour
 {
     public static ScreenManager Instance { get; private set; }
-
-    private List<UIScreen> screenStack = new List<UIScreen>();
+    
     private UIScreen activeScreen;
 
     public void Awake()
@@ -18,31 +18,34 @@ public class ScreenManager : MonoBehaviour
         }
     }
 
-    public void Push(UIScreen prefab)
+    public UIScreen Push(UIScreen prefab)
     {
-        activeScreen = Instantiate(prefab, transform);
+        if (!ReferenceEquals(activeScreen, null)) {
+            activeScreen.Close();
+            activeScreen = null;
+        }
         
-        screenStack.Add(activeScreen);
+        activeScreen = Instantiate(prefab, transform);
 
-        activeScreen.OnVisibilityChanged += OnScreenVisibilityChanged;
+        activeScreen.OnOpened += OnScreenOpened;
+        activeScreen.OnClosed += OnScreenClosed;
 
         activeScreen.Open();
+
+        return activeScreen;
     }
 
-    private void OnScreenVisibilityChanged(bool isVisible)
+    private void OnScreenOpened(UIScreen screen)
     {
-        if (!isVisible) {
-            activeScreen.OnVisibilityChanged -= OnScreenVisibilityChanged;
-
-            screenStack.Remove(activeScreen);
-            Destroy(activeScreen.gameObject);
-            
-            if (screenStack.Count == 0) {
-                activeScreen = null;
-                return;
-            }
         
-            activeScreen = screenStack.Last();
+    }
+    
+    private void OnScreenClosed(UIScreen screen)
+    {
+        if (screen == activeScreen) {
+            activeScreen = null;
         }
+        
+        Destroy(screen.gameObject);
     }
 }

@@ -13,7 +13,8 @@ public class UIScreen : MonoBehaviour
     protected static readonly int AnimatorStateVisible = Animator.StringToHash("Visible");
     protected static readonly int AnimatorStateHide = Animator.StringToHash("Hide");
 
-    public event Action<bool> OnVisibilityChanged;
+    public event Action<UIScreen> OnOpened;
+    public event Action<UIScreen> OnClosed;
     
     public bool IsVisible { get; private set; }
     
@@ -58,19 +59,17 @@ public class UIScreen : MonoBehaviour
 
     private void OnStateEntered(int stateHash)
     {
-        
+        if (stateHash == AnimatorStateVisible) {
+            Debug.Log("Screen became visible");
+            OnOpened?.Invoke(this);
+        }
     }
     
     private void OnStateExited(int stateHash)
     {
-        if (stateHash == AnimatorStateShow) {
-            Debug.Log("Visible");
-            OnVisibilityChanged?.Invoke(true);
-        }
-
         if (stateHash == AnimatorStateHide) {
-            Debug.Log("Hidden");
-            OnVisibilityChanged?.Invoke(false);
+            Debug.Log("Screen became invisible");
+            OnClosed?.Invoke(this);
         }
     }
 }

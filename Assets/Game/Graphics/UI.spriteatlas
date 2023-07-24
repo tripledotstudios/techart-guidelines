@@ -41,23 +41,29 @@ SpriteAtlas:
   - {fileID: 21300000, guid: b11b23c574a44420b80ba3d70306cdcf, type: 3}
   - {fileID: 21300000, guid: e4a41b77113c04c95982c5b1143a6060, type: 3}
   - {fileID: 21300000, guid: 5f87de083ff8547f8bb833235aee9a11, type: 3}
+  - {fileID: 21300000, guid: 91fea2a9741ed4642951b7dde6271366, type: 3}
   - {fileID: 21300000, guid: 545a4e6a3adb240f1b78e50a7d35c5dd, type: 3}
+  - {fileID: 21300000, guid: 6a4df20b8471844f8be41ac5e3df07ed, type: 3}
   - {fileID: 21300000, guid: fda2601bd16a54b9291d10d30590675d, type: 3}
   - {fileID: 21300000, guid: 48fd846b7718a455bb49b71f308ef330, type: 3}
   - {fileID: 21300000, guid: d1f01e9c6af9f4adc942decb6615fc13, type: 3}
   - {fileID: 21300000, guid: 7269879e9e3bf44be90c8ddc05e78fa3, type: 3}
   - {fileID: 21300000, guid: 84ec8caedc599495ca677a01aa9aba4a, type: 3}
+  - {fileID: 21300000, guid: 5692fcaf3773241c28dae68c655a415b, type: 3}
   - {fileID: 21300000, guid: 9b334daf9bafd4897b46434a9cd8fe89, type: 3}
   m_PackedSpriteNamesToIndex:
   - BottomBar_Stroke
   - MainScreen_Background
   - Icon_Hamburger
+  - Splat_002
   - Splat_001
+  - Border
   - Circle96_DropShadow
   - BottomBar_Background
   - Icon_Settings
   - Stripe_001
   - Icon_Home
+  - SDF_TDSLogo
   - Button_Underline
   m_RenderDataMap: {}
   m_Tag: UI

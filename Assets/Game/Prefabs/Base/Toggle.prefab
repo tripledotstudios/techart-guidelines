@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 212f8ede20ef84406971c42bdba1cdd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeStateAnimation: {fileID: 0}
-  normalStateAnimation: {fileID: 0}
-  disabledAnimation: {fileID: 0}
-  enabledAnimation: {fileID: 0}
+  activeStateAnimation: {fileID: 7400000, guid: 389e2fb3cb9c54e2a952070dbd49f25b, type: 2}
+  normalStateAnimation: {fileID: 7400000, guid: 00d2b04aaf1634f88bbe96748baa2197, type: 2}
+  disabledAnimation: {fileID: 7400000, guid: 43d3b96152ee341d7a1a4443ede4eacb, type: 2}
+  enabledAnimation: {fileID: 7400000, guid: 1df885e8bebba4a5eaed9b5eba4f513e, type: 2}
